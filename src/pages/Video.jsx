@@ -1,14 +1,17 @@
     import React, { useState, useEffect } from 'react';
-    import { Link, useParams } from 'react-router-dom';
+    import { Link, useNavigate, useParams } from 'react-router-dom';
     import { fetchFromAPI } from '../utils/api';
     import { webdText } from '../data/webd';
     import Main from '../components/section/Main';
     import ReactPlayer from 'react-player';
     import { CiChat1, CiStar, CiRead } from 'react-icons/ci';
     import { AiOutlineFullscreen } from 'react-icons/ai';
+    import { FiArrowLeft } from 'react-icons/fi';
+    import { getReturnPosition } from '../utils/returnPosition';
 
     const Video = () => {
     const { videoId } = useParams();
+    const navigate = useNavigate();
     const [videoDetail, setVideoDetail] = useState(null);
     const [isLocal, setIsLocal] = useState(false);
     const [localVideo, setLocalVideo] = useState(null);
@@ -38,9 +41,18 @@
         }
     };
 
+    const handleGoBack = () => {
+        const saved = getReturnPosition();
+        navigate(saved?.path || '/webd');
+    };
+
     return (
         <Main title="" description="">
         <section id='videoViewPage'>
+            <button type="button" className="video-back-button" onClick={handleGoBack}>
+                <FiArrowLeft aria-hidden="true" />
+                이전 페이지로
+            </button>
             <div className='video__view'>
             <div className='video__play' style={{ position: 'relative' }}>
                 {isLocal ? (
@@ -128,7 +140,6 @@
     };
 
     export default Video;
-
 
 
 

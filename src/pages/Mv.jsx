@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Main from '../components/section/Main'
 import VideoCard from '../components/video/VideoCard'
 import { mvText } from '../data/mv'
+import { restoreReturnPosition } from '../utils/returnPosition'
 
 
 
@@ -15,6 +16,7 @@ const Mv = () => {
 
         const timer = setTimeout(() => {
             setLoading(false);
+            restoreReturnPosition('/mv');
         }, 300);
 
         return () => clearTimeout(timer);

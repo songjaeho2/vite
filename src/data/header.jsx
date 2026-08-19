@@ -1,6 +1,4 @@
-import { CiBaseball } from "react-icons/ci";
-import { CiBoxes } from "react-icons/ci";
-import { CiMoneyBill } from "react-icons/ci";
+import { FiBriefcase, FiFilm, FiHome, FiMonitor } from "react-icons/fi";
 
 import { AiFillGithub } from "react-icons/ai";
 
@@ -10,31 +8,24 @@ import { AiOutlineInstagram } from "react-icons/ai";
 export const headerMenus = [
     {
         title: "포트폴리오",
-        icon: <CiBaseball />,
+        icon: <FiHome />,
         src: "/"
     },
     {
         title: "경력사항",
-        icon: <CiMoneyBill />,
+        icon: <FiBriefcase />,
         src: "/crr"
     },
     {
         title: "광고영상",
-        icon: <CiMoneyBill />,
+        icon: <FiMonitor />,
         src: "/webd"
     },
     {
         title: "뮤직비디오",
-        icon: <CiBoxes />,
+        icon: <FiFilm />,
         src: "/mv"
     },
-    {
-        title: "연기영상",
-        icon: <CiBoxes />,
-        src: "/acting"
-    },
-
-
 ];
 
 

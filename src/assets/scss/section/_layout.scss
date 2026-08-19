@@ -5,8 +5,14 @@
     width: 250px;
     height: 100%;
     overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     z-index: 10000;
     border-right: 1px solid var(--black100);
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 #main {
     max-width: 2000px;
@@ -14,15 +20,15 @@
     margin: 0 auto;
     padding-left: 260px;
   
-    @media (max-width: 768px) {
+    @media (max-width: 800px) {
       padding-left: 0;
-      padding-top: 70px; // <- 여기! 상단 마진 추가
+      padding-top: 70px;
     }
   }
 
 #footer {
     text-align: center;
-    background-color: var(--black100);
+    background-color: var(--black);
     border-top: 1px solid (var--black100);
     padding: 20px;
     margin-left: 260px;
@@ -33,16 +39,21 @@
 
 @media (max-width: 800px){
     #header {
-        left: -260px;
+        left: 0;
+        width: 0;
+        height: 0;
+        overflow: visible;
+        border-right: 0;
 
         h1 {
-            position: fixed;
+            position: absolute;
             left: 0;
             top: 0;
         }
     }
     #main {
         padding-left: 0;
+        padding-top: 70px;
     }
     #footer {
         width: 100%;

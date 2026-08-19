@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Main from '../components/section/Main'
 import VideoCard from '../components/video/VideoCard'
 import { webdText } from '../data/webd'
+import { restoreReturnPosition } from '../utils/returnPosition'
 
 
 
@@ -15,6 +16,7 @@ const Webd = () => {
 
         const timer = setTimeout(() => {
             setLoading(false);
+            restoreReturnPosition('/webd');
         }, 300);
 
         return () => clearTimeout(timer);

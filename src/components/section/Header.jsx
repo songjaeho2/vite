@@ -1,33 +1,40 @@
-import React, { useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
 import Logo from '../header/Logo';
 import Menu from '../header/Menu';
 import Sns from '../header/Sns';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiArrowUp } from 'react-icons/fi';
 
 const Header = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
+    useEffect(() => {
+        const handleScroll = () => setIsScrolled(window.scrollY > 60);
+        handleScroll();
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (
         <>
-            {/* 햄버거 버튼 */}
-            <button className="hamburger" onClick={toggleMenu}>
-                {isOpen ? <FiX /> : <FiMenu />}
-            </button>
-
-            <header id='header' role='banner'>
+            <header id='header' role='banner' className={isScrolled ? 'is-scrolled' : ''}>
                 <Logo />
-                <Menu isOpen={isOpen} toggleMenu={toggleMenu} />
+                <Menu />
                 <Sns />
             </header>
+            <button
+                type="button"
+                className={`back-to-top ${isScrolled ? 'is-visible' : ''}`}
+                onClick={scrollToTop}
+                aria-label="페이지 맨 위로 이동"
+            >
+                <FiArrowUp aria-hidden="true" />
+            </button>
         </>
     );
 };
 
 export default Header;
-
-

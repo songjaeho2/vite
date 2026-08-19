@@ -31,6 +31,7 @@
             <div className="divider" />
 
             <div className="profile-box">
+            <span className="profile-title">PROFILE</span>
             <div className="profile-row">
                 <span className="label">TOP</span>
                 <span className="value">100–105</span>
@@ -41,17 +42,20 @@
             </div>
             <div className="profile-row">
                 <span className="label">SHOES</span>
-                <span className="value">280</span>
+                <span className="value">280 mm</span>
             </div>
 
             <div className="divider" />
 
             <div className="profile-sub">
-                <span className="number">180</span>
-                <span className="unit">cm</span>
-                <span className="bar">|</span>
-                <span className="number">70</span>
-                <span className="unit">kg</span>
+                <div className="profile-metric">
+                    <span className="label">HEIGHT</span>
+                    <span className="number">180 <small>cm</small></span>
+                </div>
+                <div className="profile-metric">
+                    <span className="label">WEIGHT</span>
+                    <span className="number">70 <small>kg</small></span>
+                </div>
             </div>
             </div>
 
@@ -72,5 +76,3 @@
     };
 
     export default Menu;
-
-
