@@ -21,10 +21,18 @@
         if (local) {
         setIsLocal(true);
         setLocalVideo(local);
+        setVideoDetail(null);
         } else {
         setIsLocal(false);
+        setLocalVideo(null);
+        setVideoDetail(null);
         fetchFromAPI(`videos?part=snippet,statistics&id=${videoId}`)
-            .then((data) => setVideoDetail(data.items[0]));
+            .then((data) => setVideoDetail(data.items?.[0] ?? null))
+            .catch((error) => {
+                // Metadata is optional. The YouTube player should still work when
+                // the API key is missing, its quota is exceeded, or the API fails.
+                console.error('Failed to load YouTube video metadata:', error);
+            });
         }
         window.scrollTo(0, 0);
     }, [videoId]);
@@ -84,7 +92,7 @@
                     </button>
                 </>
                 ) : (
-                videoDetail && (
+                (
     <ReactPlayer
     playing={true}
     url={`https://www.youtube.com/watch?v=${videoId}`}
@@ -140,6 +148,5 @@
     };
 
     export default Video;
-
 
 
