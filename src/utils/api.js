@@ -10,7 +10,7 @@ const options = {
 
     },
     headers: {
-    'x-rapidapi-key': process.env.REACT_APP_RAPID_API_KEY,
+    'x-rapidapi-key': import.meta.env.VITE_RAPID_API_KEY,
     'x-rapidapi-host': 'youtube-v311.p.rapidapi.com'
     }
 };

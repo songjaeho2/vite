@@ -15,7 +15,9 @@
 - git을 사용하여 파일을 관리합니다.
 
 ## 프로젝트 실행
-- react를 설치합니다. `npx create-react-app 타이틀`
+- 의존성을 설치합니다. `npm install`
+- Vite 개발 서버를 실행합니다. `npm run dev`
+- 프로덕션 빌드를 생성합니다. `npm run build`
 - react-router-dom을 설치합니다. `npm install react-router-dom`
 - axios를 설치합니다. `npm install axios`
 - react-icons을 설치합니다. `npm install react-icons`

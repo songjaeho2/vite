@@ -1,5 +1,5 @@
     import React, { useState } from 'react';
-    import { headerMenus } from '../../data/header';
+    import { headerMenus } from '../../data/header.jsx';
     import { Link, useLocation } from 'react-router-dom';
     import { FaInstagram } from 'react-icons/fa';
     import { FiMenu, FiX } from 'react-icons/fi';
@@ -72,6 +72,5 @@
     };
 
     export default Menu;
-
 
 
