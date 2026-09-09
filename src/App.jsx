@@ -12,6 +12,7 @@ const Crr = lazy(() => import('./pages/Crr'));
 const Acting = lazy(() => import('./pages/Acting'));
 const Not = lazy(() => import('./pages/Not'));
 const Today = lazy(() => import('./pages/Today'));
+const Profile = lazy(() => import('./pages/Profile'));
 
 
 
@@ -30,6 +31,7 @@ const App = () => {
       <Route path='/video/:videoId' element={<Video />} />
       <Route path='/crr' element={<Crr />} />
       <Route path='/acting' element={<Acting />} />
+      <Route path='/profile' element={<Profile />} />
       <Route path='*' element={<Not />} />
     </Routes>
   </Suspense>

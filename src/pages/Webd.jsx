@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { FiFilm } from 'react-icons/fi'
 import Main from '../components/section/Main'
 import VideoCard from '../components/video/VideoCard'
 import { webdText } from '../data/webd'
@@ -28,7 +30,13 @@ const Webd = () => {
         
         <Main 
             title = ""
-            description="">
+            description=""
+            pageAction={(
+                <Link to="/mv" className="page-navigation__action">
+                    <span>뮤직비디오</span>
+                    <FiFilm aria-hidden="true" />
+                </Link>
+            )}>
                 
             <section id='webd' className={webdClass}>
                 <div className={`video__inner webd ${loading ? '' : 'isLoaded'}`}>

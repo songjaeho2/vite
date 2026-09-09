@@ -55,11 +55,12 @@ const Home = () => {
         <section className="portfolio-hero" aria-labelledby="intro-title">
           <div className="portfolio-hero__text">
             <span className="portfolio-eyebrow" lang="en">ACTOR · COMMERCIAL MODEL</span>
-            <h2 id="intro-title">송재호</h2>
-            <p className="portfolio-hero__lead">이야기의 분위기를 자연스럽게 완성하는 배우</p>
+            <div className="portfolio-hero__identity">
+              <h2 id="intro-title">송재호</h2>
+              <time dateTime="1995-06-18">1995.06.18</time>
+            </div>
             <p className="portfolio-hero__description">
               광고와 브랜드 콘텐츠를 중심으로 다양한 현장에서 활동하고 있습니다.
-              작품의 목적과 톤을 이해하고, 오래 기억되는 장면을 만들어갑니다.
             </p>
             <div className="portfolio-actions">
               <a href="#about" className="portfolio-button portfolio-button--scroll">
@@ -80,19 +81,6 @@ const Home = () => {
             <h2 id="about-title">소개 및 주요 경력</h2>
           </div>
           <div className="profile-summary">
-            <div className="profile-summary__intro">
-              <div className="about-copy">
-                <p>
-                  광고와 브랜드 콘텐츠를 중심으로 활동하고 있습니다.
-                
-                </p>
-              </div>
-              <ul className="strength-list" aria-label="주요 강점">
-                <li>자연스럽고 편안한 표현</li>
-                <li>다양한 콘셉트 소화력</li>
-                <li>빠른 현장 이해와 책임감</li>
-              </ul>
-            </div>
             <div className="career-timeline">
               {careerData.map(({ year, items }) => (
                 <article className="career-card" key={year}>

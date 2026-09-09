@@ -1,4 +1,4 @@
-import { FiBriefcase, FiFilm, FiHome, FiMonitor } from "react-icons/fi";
+import { FiBriefcase, FiFilm, FiHome, FiMonitor, FiUser } from "react-icons/fi";
 
 import { AiFillGithub } from "react-icons/ai";
 
@@ -15,6 +15,11 @@ export const headerMenus = [
         title: "경력사항",
         icon: <FiBriefcase />,
         src: "/crr"
+    },
+    {
+        title: "프로필사진",
+        icon: <FiUser />,
+        src: "/profile"
     },
     {
         title: "광고영상",

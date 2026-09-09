@@ -32,19 +32,29 @@ html { scroll-behavior: smooth; }
   letter-spacing: 0.16em;
 }
 
+.portfolio-hero__identity {
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(0.8rem, 1.5vw, 1.35rem);
+  margin-bottom: 1.25rem;
+}
+
 .portfolio-hero__text h2 {
-  margin-bottom: 1rem;
+  margin: 0;
   font-size: clamp(3.5rem, 8vw, 7.5rem);
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: 0.06em;
 }
 
-.portfolio-hero__lead {
-  margin-bottom: 1.25rem;
-  font-size: clamp(1.25rem, 2.2vw, 2rem);
+.portfolio-hero__identity time {
+  margin-bottom: 0.35rem;
+  color: var(--white200);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.82rem;
   font-weight: 700;
-  line-height: 1.4;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
 }
 
 .portfolio-hero__description {
@@ -134,42 +144,7 @@ html { scroll-behavior: smooth; }
 }
 
 .profile-summary {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(2.5rem, 7vw, 7rem);
-}
-
-.about-copy { font-size: clamp(1.2rem, 2.4vw, 1.85rem); line-height: 1.7; word-break: keep-all; }
-.about-copy p + p {
-  margin-top: 1.1rem;
-  color: var(--white200);
-  font-size: 0.68em;
-  line-height: 1.8;
-}
-.strength-list {
-  display: grid;
-  margin-top: 1.75rem;
-  border-top: 1px solid var(--black300);
-}
-
-.strength-list li {
-  position: relative;
-  padding: 0.85rem 0 0.85rem 1rem;
-  border-bottom: 1px solid var(--black300);
-  color: var(--white200);
-  font-size: 0.88rem;
-  line-height: 1.5;
-}
-
-.strength-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 1.25rem;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--white200);
+  max-width: 920px;
 }
 
 .career-timeline { border-top: 1px solid var(--black300); }
@@ -216,16 +191,8 @@ html { scroll-behavior: smooth; }
     font-size: clamp(3.25rem, 5vw, 4.75rem);
   }
 
-  .portfolio-hero__lead {
-    font-size: clamp(1.2rem, 1.7vw, 1.65rem);
-  }
-
   .portfolio-section__heading h2 {
     font-size: clamp(1.75rem, 3vw, 2.7rem);
-  }
-
-  .about-copy {
-    font-size: clamp(1.15rem, 1.7vw, 1.45rem);
   }
 
   .portfolio-contact h2 {
@@ -252,15 +219,6 @@ html { scroll-behavior: smooth; }
 
   .portfolio-section {
     padding: 4.5rem 2.5rem;
-  }
-
-  .profile-summary {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .about-copy {
-    max-width: 680px;
   }
 
   .document-grid {
@@ -290,7 +248,8 @@ html { scroll-behavior: smooth; }
     border-radius: 1rem;
   }
   .portfolio-hero__text h2 { font-size: clamp(2.5rem, 10vw, 3.5rem); letter-spacing: 0.08em; }
-  .portfolio-hero__lead { margin-bottom: 0.8rem; font-size: 1.2rem; }
+  .portfolio-hero__identity { gap: 0.75rem; margin-bottom: 1rem; }
+  .portfolio-hero__identity time { margin-bottom: 0.2rem; font-size: 0.72rem; }
   .portfolio-hero__description { font-size: 0.92rem; line-height: 1.7; }
   .portfolio-actions { display: grid; grid-template-columns: 1fr 1fr; }
   .portfolio-section { padding: 3.25rem 1.25rem; }
@@ -298,10 +257,7 @@ html { scroll-behavior: smooth; }
   .portfolio-section__heading h2 { font-size: 1.75rem; }
   .portfolio-section__heading--split { align-items: flex-end; }
   .portfolio-section__heading--split > div { display: block; }
-  .profile-summary, .document-grid { grid-template-columns: 1fr; }
-  .profile-summary { gap: 2rem; }
-  .about-copy { font-size: 1.08rem; line-height: 1.65; }
-  .strength-list { margin-top: 1.25rem; }
+  .document-grid { grid-template-columns: 1fr; }
   .career-card { padding: 1.25rem 0; }
   .works-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
   .work-card { border-radius: 0.8rem; }
